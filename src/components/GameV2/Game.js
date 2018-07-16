@@ -52,7 +52,6 @@ class Game extends Component {
         if (this.endGame) { return }
         const { availableBoxes, state: { boxes } } = this
         const moveScores = ai.minimax(boxes, availableBoxes, true)
-        console.log(moveScores)
         let max = moveScores[0]
         let selection = 0
         for (let i = 0; i < moveScores.length; i++) {
