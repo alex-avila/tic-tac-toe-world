@@ -10,9 +10,9 @@ class Navbar extends Component {
             <nav className="nav__wrapper--outer">
                 <div className="nav__wrapper--inner">
                     <div className="nav__links">
-                        <NavLink exact className="nav__link" activeClassName="section__selected" to="/News">News</NavLink>
-                        <NavLink exact className="nav__link" activeClassName="section__selected" to="/">Weather</NavLink>
-                        <NavLink exact className="nav__link" activeClassName="section__selected" to="/Game">Game</NavLink>
+                        {/* <NavLink exact className="nav__link" activeClassName="section__selected" to="/News">News</NavLink> */}
+                        <NavLink exact className="nav__link" activeClassName="section__selected" to="/Weather">Weather</NavLink>
+                        <NavLink exact className="nav__link" activeClassName="section__selected" to="/">Game</NavLink>
                     </div>
                 </div>
             </nav>
