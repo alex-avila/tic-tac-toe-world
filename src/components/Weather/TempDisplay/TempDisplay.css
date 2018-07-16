@@ -1,14 +1,15 @@
 .prominent-temp {
-    height: 33vh;
+    height: 20vh;
     display: flex;
     align-items: center;
-    margin-bottom: -25px;
+    margin-bottom: 0;
 }
 
 .prominent-temp h1 {
     font-size: 6em;
     font-weight: 100;
     color: white;
+    margin: 0;
     text-shadow:
         0 0 10px rgba(255, 255, 255, 0.5);
 }
