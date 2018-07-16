@@ -34,9 +34,9 @@ class App extends Component {
         <MainWrapperWithLoading isLoading={this.props.isLoading} className="app-wrapper">
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Weather}/>
+            <Route exact path="/Weather" component={Weather}/>
             <Route path="/News" component={NewsContainer}/>
-            <Route path="/Game" component={Game}/>
+            <Route path="/" component={Game}/>
           </Switch>
         </MainWrapperWithLoading>
       </div>
