@@ -54,7 +54,6 @@ class NewsNavbar extends Component {
                 </div>
             )
         })
-        console.log(mappedDropdown)
         const { selected, expanded } = this.state
         return (
             <nav className="news__nav">
