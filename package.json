@@ -20,6 +20,18 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": ["lint-staged"]
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,css}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "homepage": "https://alex-avila.github.io/tic-tac-toe-world",
   "devDependencies": {
     "eslint": "^5.3.0",
