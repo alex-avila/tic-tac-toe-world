@@ -28,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "{,src/}**/*.{js,css}": [
+    "*.{js,css}": [
       "npm run lint",
       "npm run pretty",
       "git add"
