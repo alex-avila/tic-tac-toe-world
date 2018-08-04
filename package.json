@@ -15,8 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "eslint \"src/**/*.js\" --fix",
+    "eslint": "eslint \"src/**/*.js\" --fix",
     "pretty": "prettier --write \"src/**/*.{js,css}\"",
+    "lint": "npm run eslint && yarn run pretty",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

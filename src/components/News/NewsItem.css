@@ -1,31 +1,31 @@
 .news__item {
-    padding: 0 1.618em 0;
-    color: inherit;
-    text-decoration: none;
+  padding: 0 1.618em 0;
+  color: inherit;
+  text-decoration: none;
 }
 
 .news__item:not(:last-of-type)::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 60%;
-    background: rgba(0, 0, 0, 0.26);
-    margin: 1.618em auto;
+  content: '';
+  display: block;
+  height: 1px;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.26);
+  margin: 1.618em auto;
 }
 
 .news__item {
-    display: block;
+  display: block;
 }
 
 .news__title {
-    margin-bottom: 0em;
+  margin-bottom: 0em;
 }
 
 .news__author {
-    margin: 0.618em 0;
-    color: rgb(145, 145, 145);
+  margin: 0.618em 0;
+  color: rgb(145, 145, 145);
 }
 
 .news__description {
-    margin-top: 0em;
+  margin-top: 0em;
 }

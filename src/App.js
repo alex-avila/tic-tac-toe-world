@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { getWeather, getNews } from './redux'
 
 import withLoading from './shared/withLoading'
-import MainWrapper from './components/MainWrapper';
+import MainWrapper from './components/MainWrapper'
 import Navbar from './components/Navbar/Navbar'
 import Weather from './components/Weather/Weather'
 import NewsContainer from './components/News/NewsContainer'
@@ -24,19 +24,19 @@ class App extends Component {
 
   render() {
     return (
-      <div 
-        className="main-wrapper" 
-        style={
-          this.props.isLoading ? 
-            {justifyContent: 'center'} : null
-        }
+      <div
+        className="main-wrapper"
+        style={this.props.isLoading ? { justifyContent: 'center' } : null}
       >
-        <MainWrapperWithLoading isLoading={this.props.isLoading} className="app-wrapper">
+        <MainWrapperWithLoading
+          isLoading={this.props.isLoading}
+          className="app-wrapper"
+        >
           <Navbar />
           <Switch>
-            <Route exact path="/Weather" component={Weather}/>
-            <Route path="/News" component={NewsContainer}/>
-            <Route path="/" component={Game}/>
+            <Route exact path="/Weather" component={Weather} />
+            <Route path="/News" component={NewsContainer} />
+            <Route path="/" component={Game} />
           </Switch>
         </MainWrapperWithLoading>
       </div>
@@ -48,4 +48,9 @@ class App extends Component {
 // react-redux blocks the updates that would normally happen with react-router-dom
 // withRouter fixes that
 // This is inneficient however so I should change this
-export default withRouter(connect(state => ({ isLoading: state.isLoading }), { getWeather, getNews })(App))
+export default withRouter(
+  connect(
+    state => ({ isLoading: state.isLoading }),
+    { getWeather, getNews }
+  )(App)
+)
