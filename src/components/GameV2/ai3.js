@@ -67,15 +67,10 @@ let ai = {
         } else if (result === 5) {
           results.push(5)
         } else {
-          results.push(
-            Math.min(
-              ...this.minimax(
-                newBoard,
-                this.findAvailableMoves(newBoard),
-                false
-              )
-            )
+          const minimaxResults = Math.min(
+            ...this.minimax(newBoard, this.findAvailableMoves(newBoard), false)
           )
+          results.push(minimaxResults)
         }
       })
     } else {
