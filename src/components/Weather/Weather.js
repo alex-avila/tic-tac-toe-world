@@ -6,12 +6,12 @@ import GraphContainer from './GraphContainer/GraphContainer'
 import './Weather.css'
 
 const Weather = () => {
-  return (
-    <div className="weather-wrapper">
-      <TempDisplay />
-      <GraphContainer />
-    </div>
-  )
+    return (
+        <div className="weather-wrapper">
+            <TempDisplay />
+            <GraphContainer />
+        </div>
+    )
 }
 
 export default Weather

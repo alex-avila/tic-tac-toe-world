@@ -17,31 +17,33 @@ import './App.css'
 const MainWrapperWithLoading = withLoading(MainWrapper)
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getWeather()
-    this.props.getNews()
-  }
+    componentDidMount() {
+        this.props.getWeather()
+        this.props.getNews()
+    }
 
-  render() {
-    return (
-      <div
-        className="main-wrapper"
-        style={this.props.isLoading ? { justifyContent: 'center' } : null}
-      >
-        <MainWrapperWithLoading
-          isLoading={this.props.isLoading}
-          className="app-wrapper"
-        >
-          <Navbar />
-          <Switch>
-            <Route exact path="/Weather" component={Weather} />
-            <Route path="/News" component={NewsContainer} />
-            <Route path="/" component={Game} />
-          </Switch>
-        </MainWrapperWithLoading>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div
+                className="main-wrapper"
+                style={
+                    this.props.isLoading ? { justifyContent: 'center' } : null
+                }
+            >
+                <MainWrapperWithLoading
+                    isLoading={this.props.isLoading}
+                    className="app-wrapper"
+                >
+                    <Navbar />
+                    <Switch>
+                        <Route exact path="/Weather" component={Weather} />
+                        <Route path="/News" component={NewsContainer} />
+                        <Route path="/" component={Game} />
+                    </Switch>
+                </MainWrapperWithLoading>
+            </div>
+        )
+    }
 }
 
 // https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
@@ -49,8 +51,8 @@ class App extends Component {
 // withRouter fixes that
 // This is inneficient however so I should change this
 export default withRouter(
-  connect(
-    state => ({ isLoading: state.isLoading }),
-    { getWeather, getNews }
-  )(App)
+    connect(
+        state => ({ isLoading: state.isLoading }),
+        { getWeather, getNews }
+    )(App)
 )

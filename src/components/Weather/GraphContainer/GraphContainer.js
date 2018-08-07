@@ -6,12 +6,12 @@ import Graph from './Graph/Graph'
 import './GraphContainer.css'
 
 const GraphContainer = () => {
-  return (
-    <div className="graph-container">
-      <Select />
-      <Graph />
-    </div>
-  )
+    return (
+        <div className="graph-container">
+            <Select />
+            <Graph />
+        </div>
+    )
 }
 
 export default GraphContainer
