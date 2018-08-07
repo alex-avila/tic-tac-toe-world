@@ -1,8 +1,8 @@
 .news__wrapper--outer {
-  padding: 2em 1.618em 3em;
+    padding: 2em 1.618em 3em;
 }
 
 .news__wrapper {
-  max-width: 800px;
-  margin: auto;
+    max-width: 800px;
+    margin: auto;
 }

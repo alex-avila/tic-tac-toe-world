@@ -11,19 +11,22 @@ import './NewsContainer.css'
 const NewsWithLoading = withLoading(News)
 
 class NewsContainer extends Component {
-  render() {
-    return (
-      <div className="news__wrapper--outer">
-        <div className="news__wrapper">
-          <NewsNavbar />
-          <NewsWithLoading articles={this.props.articles} isLoading={false} />
-        </div>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className="news__wrapper--outer">
+                <div className="news__wrapper">
+                    <NewsNavbar />
+                    <NewsWithLoading
+                        articles={this.props.articles}
+                        isLoading={false}
+                    />
+                </div>
+            </div>
+        )
+    }
 }
 
 export default connect(state => ({
-  articles: state.articles,
-  isLoading: state.isNewsLoading
+    articles: state.articles,
+    isLoading: state.isNewsLoading
 }))(NewsContainer)
