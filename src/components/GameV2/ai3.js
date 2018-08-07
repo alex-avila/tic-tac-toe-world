@@ -59,13 +59,7 @@ let ai = {
         return
     },
 
-    getPerformace() {
-        return window.performance.now()
-    },
-
     minimax(board, moves, max, depth = -1) {
-        depth++
-        const start = this.getPerformace()
         let target
         let results = []
         if (max) {
@@ -86,8 +80,7 @@ let ai = {
                         ...this.minimax(
                             newBoard,
                             this.findAvailableMoves(newBoard),
-                            false,
-                            depth
+                            false
                         )
                     )
                     results.push(minimaxResults)
@@ -111,17 +104,12 @@ let ai = {
                         ...this.minimax(
                             newBoard,
                             this.findAvailableMoves(newBoard),
-                            true,
-                            depth
+                            true
                         )
                     )
                     results.push(minmaxResults)
                 }
             }
-        }
-        if (depth === 0) {
-            const end = this.getPerformace()
-            console.log('performance: ' + (end - start))
         }
         return results
     }
