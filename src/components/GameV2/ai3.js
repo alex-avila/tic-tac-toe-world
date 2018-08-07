@@ -59,38 +59,51 @@ let ai = {
         return
     },
 
-    minimax(board, moves, max) {
+    getPerformace() {
+        return window.performance.now()
+    },
+
+    minimax(board, moves, max, depth = -1) {
+        depth++
+        const start = this.getPerformace()
         let target
         let results = []
         if (max) {
             // max's turn
             target = 'o'
-            moves.forEach(move => {
+            for (const move of moves) {
                 const newBoard = { ...board, [move]: target }
                 let result = this.getState(newBoard, target)
                 if (result === 10) {
+                    // max (player) just found out a winning situation
                     results.push(10)
+                    break
                 } else if (result === 5) {
+                    // So there's no point in doing any more calculations
                     results.push(5)
                 } else {
                     const minimaxResults = Math.min(
                         ...this.minimax(
                             newBoard,
                             this.findAvailableMoves(newBoard),
-                            false
+                            false,
+                            depth
                         )
                     )
                     results.push(minimaxResults)
                 }
-            })
+            }
         } else {
             // min's turn
             target = 'x'
-            moves.forEach(move => {
+            for (const move of moves) {
                 const newBoard = { ...board, [move]: target }
                 let result = this.getState(newBoard, target)
                 if (result === 10) {
+                    // min (computer) just found out a winning situation
                     results.push(0)
+                    // So there's no point in doing any more calculations
+                    break
                 } else if (result === 5) {
                     results.push(5)
                 } else {
@@ -98,12 +111,17 @@ let ai = {
                         ...this.minimax(
                             newBoard,
                             this.findAvailableMoves(newBoard),
-                            true
+                            true,
+                            depth
                         )
                     )
                     results.push(minmaxResults)
                 }
-            })
+            }
+        }
+        if (depth === 0) {
+            const end = this.getPerformace()
+            console.log('performance: ' + (end - start))
         }
         return results
     }
